@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block contents %}
+
+{{user}}
+
+<div class = "row mt-5">
+    <div class = "col-12">
+        <a href="/user/login/">로그인</a>
+        <a href="/user/logout/">로그아웃</a>
+        <a href="/">일반회원</a>
+        <a href="/superuser/choice">운영진</a>
+    </div>
+</div>
+
+{% endblock %}
