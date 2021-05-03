@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block contents %}
+
+<div class = "row mt-5">
+    <div class = "cl-12 text-center">
+        <h1>팀순위</h1>
+    </div>
+</div>
+
+<div class = "row mt-5">
+    <div class = "col-12">
+        {% for score, team_name in ranking %}
+            <div class="col=12" >{{team_name}}, {{score}}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

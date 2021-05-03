@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from User.views import HomeView, RegisterView, LoginView, logout
 from Super.views import ChoiceView, InfoView, TeamView
+from Normal.views import RankingView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +28,5 @@ urlpatterns = [
     path('super/choice/', ChoiceView.as_view()),
     path('super/info/<str:team_name>', InfoView.as_view()),
     path('super/team/', TeamView.as_view()),
+    path('normal/ranking/', RankingView.as_view()),
 ]
