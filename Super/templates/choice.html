@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block contents %}
+
+<div class = "row mt-5">
+    <div class = "cl-12 text-center">
+        <h1>팀선택</h1>
+    </div>
+</div>
+
+<div class = "row mt-5">
+    <div class = "col-12">
+        
+        {% for team in teams %}
+            <a href="/superuser/info/{{ team }}">{{ team }}</a>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}
