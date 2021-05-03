@@ -2,7 +2,8 @@ from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 from .models import Infos, Team
 from .forms import InfoForm, TeamForm
-
+from django.utils.decorators import method_decorator
+from User.decorators import adminRequired
 
 users = {"을지로" : ["강0","재0","훈0"], "강남" : ["강1","재1","훈1"], "왕십리" : ["강2","재2","훈2"]  }
 
@@ -13,7 +14,7 @@ class ChoiceView(TemplateView):
         ctx = {"teams":users}
         return self.render_to_response(ctx)
 
-
+@method_decorator(adminRequired, name = 'dispatch')
 class InfoView(FormView):
     template_name = 'info.html'
     form_class = InfoForm
@@ -46,7 +47,7 @@ class InfoView(FormView):
         return context
 
 
-
+@method_decorator(adminRequired, name = 'dispatch')
 class TeamView(FormView):
     template_name = 'team.html'
     form_class = TeamForm

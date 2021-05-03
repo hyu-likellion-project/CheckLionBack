@@ -1,7 +1,10 @@
 from django.views.generic import TemplateView
 from Super.models import Infos, Team
 from collections import defaultdict
+from django.utils.decorators import method_decorator
+from User.decorators import loginRequired
 
+@method_decorator(loginRequired, name = 'dispatch')
 class RankingView(TemplateView):
     template_name = 'ranking.html'
 
