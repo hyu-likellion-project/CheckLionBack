@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block contents %}
+
+<div class = "row mt-5">
+    <div class = "cl-12 text-center">
+        <h1>정보기입</h1>
+    </div>
+</div>
+
+<div class = "row mt-5">
+    <div class = "col-12">
+        <form method = "POST" action = "/super/info/{{team_name}}">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class = "form-group">
+                <label for = "{{fied.id_for_label}}">{{field.label}}</label>
+                {{field}}
+            </div>
+
+            {% if field.errors %}
+            <span style = "color:red">{{field.errors}}</span>
+            {% endif %}
+            
+            {% endfor %}
+            <button type = "submit" class = "btn btn-primary">입력완료</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

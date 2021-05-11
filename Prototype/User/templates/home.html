@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block contents %}
+
+{{user}}
+
+<div class = "row mt-5">
+    <div class = "col-12">
+        <a href="/user/login/">로그인</a>
+        <a href="/user/logout/">로그아웃</a>
+        <a href="/normal/ranking">일반회원(팀 순위 보기)  </a>
+        <a href="/super/choice">운영진(팀별 멤버 점수 기입) </a>
+        <a href="/super/team">운영진(중앙세션 등수) </a>
+    </div>
+</div>
+
+{% endblock %}
